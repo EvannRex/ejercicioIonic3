@@ -13,8 +13,14 @@
 <ion-content padding>
   <h1>{{data.date | date:'dd / MMMM / yyyy'}}</h1>
   <h2>Saldo: {{data.money | currency:'MXN'}}</h2>
+
+  <ion-item *ngFor="let course of data.courses; let i = index">
+    <ion-label [color]="(i%2) === 0 ? 'primary':'danger'">{{course}}</ion-label>
+  </ion-item>
+ 
+  
   <button ion-button round (click)="back()">Regresar</button>
-  <button ion-button round (click)="forward()">Adelante</button>
+  <button ion-button round [color]="colorLabel"(click)="forward()">Adelante</button>
 </ion-content>
 <ion-footer>
   <h1>footer</h1>

@@ -9,7 +9,7 @@ import { AboutPage } from '../about/about';
 export class HomePage {
   user:string;
   group:string;
-  cursos:string[]=['ionic','angulas','docker','liquibase'];
+  cursos:string[]=['Ionic','Angular','Docker','Liquibase','Rest'];
   money: number;
   constructor(public navCtrl: NavController, navParams: NavParams) {
   }

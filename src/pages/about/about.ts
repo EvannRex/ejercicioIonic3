@@ -17,7 +17,7 @@ export class AboutPage {
   user: string;
   data: any;
   money:number;
-
+  colorLabel: string='secondary';
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.data=this.navParams.data;
     this.user=this.navParams.get('user');
@@ -32,5 +32,6 @@ export class AboutPage {
   }
   forward(){
     this.navCtrl.push(CostumerPage);
+    this.colorLabel='danger';
   }
 }
