@@ -1,3 +1,8 @@
 page-home {
 
+    .wraper{
+        display: flex;
+        flex-direction: column;
+        background-color: color($colors,curso);
+    }
 }
