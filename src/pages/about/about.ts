@@ -21,7 +21,6 @@ export class AboutPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.data=this.navParams.data;
     this.user=this.navParams.get('user');
-    this.money=this.navParams.get('money');
   }
 
   ionViewDidLoad() {

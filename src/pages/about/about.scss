@@ -1,3 +1,20 @@
 page-about {
-
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .wrapper-info{
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+    .course-one{
+        color: blueviolet;
+    }
+    .course-two{
+        color: red;
+    }
+    .course-three{
+        color: greenyellow;
+    }
 }
