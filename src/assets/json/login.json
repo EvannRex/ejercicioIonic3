@@ -1,8 +1,5 @@
 {
-    "id":52,
-    "name":"evanny",
-    "app":"rivera",
-    "apm":"",
-    "email":"evanny.rivera@axity.com",
-    "matricula":"123456"
+    "id":1,
+    "username":"evanny",
+    "password":"12345"
 }

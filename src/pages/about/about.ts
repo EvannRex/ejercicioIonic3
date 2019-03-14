@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { CostumerPage } from '../costumer/costumer';
 import { StudentServiceProvider } from '../../providers/student-service/student-service';
 import { EventManager } from '@angular/platform-browser';
 import { EventManagerProvider } from '../../providers/event-manager/event-manager';
@@ -45,10 +44,6 @@ export class AboutPage {
   back(){
     this.navCtrl.pop();
   }
-  forward(){
-    this.navCtrl.push(CostumerPage);
-    this.colorLabel='danger';
-  }
   
   deleteCard(student){
     this.event_manager.setIsLoading(false);
@@ -63,6 +58,5 @@ export class AboutPage {
     });
   
   }
-
   
 }

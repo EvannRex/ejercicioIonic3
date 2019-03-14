@@ -1,13 +1,13 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Tercer Examen
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h1>Curso Ionic 4</h1>
+  <h1>Login</h1>
   
   <form class="wraper" [formGroup]="loginForm">
     <ion-item>
@@ -22,10 +22,11 @@
     <div class="buttons">
       <button ion-button round 
       [color]="loginForm.valid ? 'secondary' : 'danger'"
+      [disabled]="!loginForm.valid"
       (click)="Login()">Login</button>
 
       <button ion-button round 
-      color="primary"
+      color="primary" 
       (click)="goCreateAccount()">Crear cuenta</button>
     </div>
     

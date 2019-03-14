@@ -6,14 +6,29 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>{{data.name}}</ion-title>
+    <ion-title>Bienvenido {{data.username}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <card
-    *ngFor="let item of students"
-    [student]="item"
-    (click-card)="deleteCard($event)">
-  </card>
+  <table border="0" >
+      <tr>
+        <th>Id</th>
+        <th>Username</th>
+        <th>Password</th>
+      </tr>
+      <tr *ngFor="let usuario of students">
+        <td> {{usuario.id}} </td>
+        <td> {{usuario.username}} </td>
+        <td> {{usuario.password}} </td>
+        <td> 
+          <button ion-button round 
+            color="primary"
+            >Eliminar</button>
+        </td>
+      </tr>
+  </table>
+  <button ion-button round 
+    color="primary"
+    (click)="back()">Atras</button>
 </ion-content>

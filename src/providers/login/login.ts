@@ -16,7 +16,7 @@ export class LoginProvider {
   }
   LoginService(user: string,pwd:string){
     return this.http.post(LOGIN_USER,{
-      email:user,
+      username:user,
       password:pwd
     });
   }

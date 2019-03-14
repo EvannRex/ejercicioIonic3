@@ -14,7 +14,6 @@ import { EventManagerProvider } from '../../providers/event-manager/event-manage
 export class HomePage {
   user:string;
   pwd:string;
-  cursos:string[]=['Ionic','Angular','Docker'];
   loginForm: FormGroup;
   constructor(public navCtrl: NavController,
     private fb:FormBuilder,
@@ -27,7 +26,7 @@ export class HomePage {
   }
 
   goAbout(){
-    let data = {user:this.loginForm.get('user').value,pwd:this.pwd,courses:this.cursos,date: new Date(),}
+    let data = {username:this.loginForm.get('user').value}
     this.navCtrl.push(AboutPage,data);
   }
   goCreateAccount(){
@@ -46,7 +45,7 @@ export class HomePage {
           this.goAbout();
         }, error => {
           this.events_manager.setIsLoading(false);
-          this.events_manager.setMsgToast(error.error.message);
+          this.events_manager.setMsgToast("Usuario o contraseña incorrectos");
         });
   }
 }

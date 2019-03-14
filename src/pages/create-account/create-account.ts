@@ -24,11 +24,8 @@ export class CreateAccountPage {
     private student_provider: StudentServiceProvider,
     private loading: LoadingController) {
       this.createAccountForm=this.fb.group({
-        name:['',Validators.required],
-        app:['',Validators.required],
-        apm:[''],
-        email:['',[Validators.required,Validators.email]],
-        matricula:['',Validators.required]
+        username:['',Validators.required],
+        password:['',Validators.required]
       })
   }
 

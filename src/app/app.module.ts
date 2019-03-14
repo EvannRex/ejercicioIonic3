@@ -7,13 +7,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
-import { CostumerPage } from '../pages/costumer/costumer';
 import { PipesModule } from '../pipes/pipes.module';
 import { CreateAccountPage } from '../pages/create-account/create-account';
 import { StudentServiceProvider } from '../providers/student-service/student-service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginProvider } from '../providers/login/login';
-import { LoginProviderMock } from '../mock/loginProviderMock';
 import { EventManagerProvider } from '../providers/event-manager/event-manager';
 import { CardComponent } from '../components/card/card';
 
@@ -22,7 +20,6 @@ import { CardComponent } from '../components/card/card';
     MyApp,
     HomePage,
     AboutPage,
-    CostumerPage,
     CreateAccountPage,
     CardComponent
 
@@ -38,7 +35,6 @@ import { CardComponent } from '../components/card/card';
     MyApp,
     HomePage,
     AboutPage,
-    CostumerPage,
     CreateAccountPage,
     CardComponent
   ],
@@ -47,10 +43,10 @@ import { CardComponent } from '../components/card/card';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     StudentServiceProvider,
-    LoginProvider,
-    EventManagerProvider
-    //{
-      //provide:LoginProvider,
+    EventManagerProvider,
+    LoginProvider
+    // {
+     // provide:LoginProvider,
       //useClass: LoginProviderMock
     //}
   ]
