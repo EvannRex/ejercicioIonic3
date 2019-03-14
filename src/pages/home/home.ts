@@ -35,14 +35,18 @@ export class HomePage {
   }
   Login(){
     this.events_manager.setIsLoading(true);
-    this.events_manager.setIsLoading(false);
+    
     this.login_provider
         .LoginService(
           this.loginForm.get('user').value,
           this.loginForm.get('pwd').value
         ).subscribe((response) => {
-          console.log(response)
-          this.goAbout()
-        }, error => console.log(error));
+          console.log(response);
+          this.events_manager.setIsLoading(false);
+          this.goAbout();
+        }, error => {
+          this.events_manager.setIsLoading(false);
+          this.events_manager.setMsgToast(error.error.message);
+        });
   }
 }

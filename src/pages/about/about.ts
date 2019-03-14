@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { CostumerPage } from '../costumer/costumer';
+import { StudentServiceProvider } from '../../providers/student-service/student-service';
+import { EventManager } from '@angular/platform-browser';
+import { EventManagerProvider } from '../../providers/event-manager/event-manager';
 
 /**
  * Generated class for the AboutPage page.
@@ -16,11 +19,24 @@ import { CostumerPage } from '../costumer/costumer';
 export class AboutPage {
   user: string;
   data: any;
-  money:number;
+  money: number;
+  students: any[];
   colorLabel: string='secondary';
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private student_provider: StudentServiceProvider,
+    private event_manager: EventManagerProvider) {
     this.data=this.navParams.data;
     this.user=this.navParams.get('user');
+    this.student_provider
+        .getStudents()
+        .subscribe((response: any)=>{
+          this.students= response;
+          console.log(this.students);
+        }, error => {
+          console.log(error);
+        })
   }
 
   ionViewDidLoad() {
@@ -33,4 +49,20 @@ export class AboutPage {
     this.navCtrl.push(CostumerPage);
     this.colorLabel='danger';
   }
+  
+  deleteCard(student){
+    this.event_manager.setIsLoading(false);
+    this.student_provider
+    .deleteStudent(student.id)
+    .subscribe(() =>{ 
+      this.students= this.students.filter(item => student.id != item);
+      this.event_manager.setMsgToast('se elimino correctamente');
+    },error =>{
+      this.event_manager.setIsLoading(false);
+      this.event_manager.setMsgToast(error.error);
+    });
+  
+  }
+
+  
 }

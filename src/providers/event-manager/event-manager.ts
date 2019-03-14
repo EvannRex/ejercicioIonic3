@@ -11,6 +11,7 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class EventManagerProvider {
   isLoading= new Subject<boolean>();
+  msgToast= new Subject<string>();
   constructor(public http: HttpClient) {
     console.log('Hello EventManagerProvider Provider');
   }
@@ -19,5 +20,11 @@ export class EventManagerProvider {
   }
   getIsLoading(){
     return this.isLoading.asObservable();
+  }
+  setMsgToast(text: string){
+    this.msgToast.next(text);
+  }
+  getMsgToast(){
+    return this.msgToast.asObservable();
   }
 }

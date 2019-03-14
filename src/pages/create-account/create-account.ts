@@ -28,7 +28,7 @@ export class CreateAccountPage {
         app:['',Validators.required],
         apm:[''],
         email:['',[Validators.required,Validators.email]],
-        matricula:[['',Validators.required,Validators.pattern("\[0-9\]+")]]
+        matricula:['',Validators.required]
       })
   }
 
