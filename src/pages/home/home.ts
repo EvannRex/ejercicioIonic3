@@ -27,7 +27,9 @@ export class HomePage {
 
   goAbout(){
     let data = {username:this.loginForm.get('user').value}
+    console.log(data)
     this.navCtrl.push(AboutPage,data);
+    
   }
   goCreateAccount(){
     this.navCtrl.push(CreateAccountPage);

@@ -45,12 +45,12 @@ export class AboutPage {
     this.navCtrl.pop();
   }
   
-  deleteCard(student){
+  deleteUsuario(usuario){
     this.event_manager.setIsLoading(false);
     this.student_provider
-    .deleteStudent(student.id)
+    .deleteStudent(usuario.id)
     .subscribe(() =>{ 
-      this.students= this.students.filter(item => student.id != item);
+      this.students= this.students.filter(item => usuario.id != item);
       this.event_manager.setMsgToast('se elimino correctamente');
     },error =>{
       this.event_manager.setIsLoading(false);

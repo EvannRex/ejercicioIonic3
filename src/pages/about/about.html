@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Bienvenido {{data.username}}</ion-title>
+    <ion-title>Bienvenidx   {{data.username}}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -24,6 +24,7 @@
         <td> 
           <button ion-button round 
             color="primary"
+            (click)="deleteUsuario(usuario)"
             >Eliminar</button>
         </td>
       </tr>
